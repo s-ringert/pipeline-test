@@ -7,3 +7,4 @@
 * pull from docker hub and load to server
 * automatic build and deploy
 * docker secrets for db data
+* traefik - reverse proxy for subdomains
