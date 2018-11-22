@@ -1,19 +1,6 @@
 version: '3.2'
 
 services:
-  web:
-    image: nginx:1.15
-    ports:
-      - "80:80"
-    volumes:
-      - ./:/app/
-      - ./provisioning/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-    networks:
-      - backend
-    depends_on:
-      - php-fpm
-      - db
-      
   php-fpm:
     image: php:7.2-fpm
     ports:
@@ -23,26 +10,43 @@ services:
     volumes:
         - ./:/app/
     
-  db:
+  mysql:
     image: mysql:8.0
     ports: 
       - "3306:3306"
     networks:
       - backend
-    environment:
-      MYSQL_ROOT_PASSWORD: "root"
     volumes:
       - ./dbdata/:/var/lib/mysql
-      
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PW?err}
+
+  web:
+    image: nginx:1.15
+    ports:
+      - "80:80"
+    networks:
+      - backend
+    volumes:
+      - ./:/app/
+      - ./provisioning/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php-fpm
+      - mysql
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    environment:
-     - PMA_ARBITRARY=1
-    restart: always
     ports:
      - 8080:80
+    networks:
+      - backend
     volumes:
       - /sessions
+    depends_on:
+        - mysql
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
 
 networks:
   backend:
