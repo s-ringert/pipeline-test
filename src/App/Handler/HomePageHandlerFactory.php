@@ -1,5 +1,5 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 namespace App\Handler;
 
 use Psr\Container\ContainerInterface;
@@ -14,7 +14,9 @@ class HomePageHandlerFactory
     public function __invoke(ContainerInterface $container): RequestHandlerInterface
     {
         $router = $container->get(RouterInterface::class);
-        $template = $container->has(TemplateRendererInterface::class) ? $container->get(TemplateRendererInterface::class) : null;
+        $template = $container->has(TemplateRendererInterface::class)
+            ? $container->get(TemplateRendererInterface::class)
+            : null;
 
         return new HomePageHandler(get_class($container), $router, $template);
     }
