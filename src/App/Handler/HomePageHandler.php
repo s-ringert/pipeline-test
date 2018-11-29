@@ -1,7 +1,5 @@
 <?php
-
-declare(strict_types=1);
-
+declare(strict_types = 1);
 namespace App\Handler;
 
 use Psr\Http\Message\ResponseInterface;
@@ -17,6 +15,7 @@ use Zend\Expressive\ZendView\ZendViewRenderer;
 
 class HomePageHandler implements RequestHandlerInterface
 {
+
     /** @var string */
     private $containerName;
 
@@ -27,16 +26,16 @@ class HomePageHandler implements RequestHandlerInterface
     private $template;
 
     public function __construct(
-        string $containerName,
-        Router\RouterInterface $router,
+        string $containerName, Router\RouterInterface $router,
         ?TemplateRendererInterface $template = null
-    ) {
+    )
+    {
         $this->containerName = $containerName;
-        $this->router        = $router;
-        $this->template      = $template;
+        $this->router = $router;
+        $this->template = $template;
     }
 
-    public function handle(ServerRequestInterface $request) : ResponseInterface
+    public function handle(ServerRequestInterface $request): ResponseInterface
     {
         if ($this->template === null) {
             return new JsonResponse([
