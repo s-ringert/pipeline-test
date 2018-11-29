@@ -1,6 +1,13 @@
 # About
 * This is a PHP 7.1 Docker Skeleton with Zend Expressive and Doctrine
 
+# Setup
+* clone repo
+* copy env file for dbroot pw
+* copy config files
+* composer install
+* docker-compose up
+
 # Helpful commands
 ## Run Composer
 ```shell
