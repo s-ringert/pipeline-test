@@ -42,24 +42,4 @@ class HomePageHandlerTest extends TestCase
 
         $this->assertInstanceOf(JsonResponse::class, $response);
     }
-
-    public function testReturnsHtmlResponseWhenTemplateRendererProvided()
-    {
-        $renderer = $this->prophesize(TemplateRendererInterface::class);
-        $renderer
-            ->render('app::home-page', Argument::type('array'))
-            ->willReturn('');
-
-        $homePage = new HomePageHandler(
-            get_class($this->container->reveal()),
-            $this->router->reveal(),
-            $renderer->reveal()
-        );
-
-        $response = $homePage->handle(
-            $this->prophesize(ServerRequestInterface::class)->reveal()
-        );
-
-        $this->assertInstanceOf(HtmlResponse::class, $response);
-    }
 }

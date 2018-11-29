@@ -64,7 +64,7 @@
         "clear-config-cache": "php bin/clear-config-cache.php",
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
-        "stan": "phpstan analyse -l 4 src test",
+        "stan": "phpstan analyse -l 4 src",
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
     }
