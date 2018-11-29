@@ -35,7 +35,7 @@ class HomePageHandler implements RequestHandlerInterface
         if ($this->template === null) {
             return new JsonResponse([
                 'welcome' => 'Congratulations! You have installed the ringert skeleton application.',
-                'url' => 'https://github.com/s-ringert/'
+                'url' => 'https://github.com/s-ringert/skeleton'
             ]);
         }
     }
