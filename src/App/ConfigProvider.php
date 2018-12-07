@@ -35,6 +35,7 @@ class ConfigProvider
             ],
             'factories' => [
                 Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
+                \Doctrine\ORM\EntityManager::class => Entity\Manager\EntityManagerFactory::class,
             ],
         ];
     }

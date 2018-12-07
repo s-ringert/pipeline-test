@@ -66,6 +66,7 @@
         "cs-fix": "phpcbf",
         "stan": "phpstan analyse -l 4 src",
         "test": "phpunit --colors=always",
-        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "doctrine": "doctrine"
     }
 }

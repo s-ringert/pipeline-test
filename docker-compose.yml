@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   php-fpm:
-    image: php:7.2-fpm
+    build: provisioning/php-fpm
     ports:
      - "9000:9000"
     networks:
