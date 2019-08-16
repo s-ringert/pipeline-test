@@ -1,6 +1,6 @@
 <?php
 
-Namespace App\Entity;
+namespace App\Entity;
 
 class Product
 {

@@ -12,8 +12,8 @@ use function get_class;
 class HomePageHandlerFactory
 {
 
-    public function __invoke(ContainerInterface $container
-    ): RequestHandlerInterface {
+    public function __invoke(ContainerInterface $container): RequestHandlerInterface
+    {
         $entityManager = $container->get(\Doctrine\ORM\EntityManager::class);
         $router = $container->get(RouterInterface::class);
         $template = $container->has(TemplateRendererInterface::class)

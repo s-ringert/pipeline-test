@@ -2,12 +2,12 @@
 
 namespace App\Entity\Manager;
 
-
-class EntityManagerFactory
-    implements \Zend\ServiceManager\Factory\FactoryInterface
+class EntityManagerFactory implements \Zend\ServiceManager\Factory\FactoryInterface
 {
-    public function __invoke(\Interop\Container\ContainerInterface $container,
-        $requestedName, ?array $options = null
+    public function __invoke(
+        \Interop\Container\ContainerInterface $container,
+        $requestedName,
+        ?array $options = null
     ) {
         $appConfig = $container->get('config');
         if (isset($appConfig['dbConfig']) === false) {
@@ -18,7 +18,8 @@ class EntityManagerFactory
             array(__DIR__ . "/../../../../config/xml")
         );
         $entityManager = \Doctrine\ORM\EntityManager::create(
-            $appConfig['dbConfig'], $config
+            $appConfig['dbConfig'],
+            $config
         );
         return $entityManager;
     }
