@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManager;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
+use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
 class ListProductsHandler implements RequestHandlerInterface
@@ -37,11 +38,10 @@ class ListProductsHandler implements RequestHandlerInterface
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        // TODO: Implement handle() method.
         $productRepository = $this->entityManager->getRepository(Product::class);
-        $productList = $productRepository->findAll();
+        $data['productList'] = $productRepository->findAll();
 
-        dump($productList);
+        return new HtmlResponse($this->templateRenderer->render('app::list-products', $data));
 
     }
 }

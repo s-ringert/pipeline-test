@@ -5,6 +5,7 @@ namespace App\Handler;
 use Doctrine\ORM\EntityManager;
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
+use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\Expressive\Twig\TwigRenderer;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
@@ -29,7 +30,7 @@ class ListProductsHandlerFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         return new ListProductsHandler(
-            $container->get(TwigRenderer::class),
+            $container->get(TemplateRendererInterface::class),
             $container->get(EntityManager::class)
         );
 }}
