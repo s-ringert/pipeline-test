@@ -1,7 +1,7 @@
 version: '3.2'
 
 services:
-  php-fpm:
+  docker-php-fpm:
     build: provisioning/php-fpm
     ports:
      - "9000:9000"
@@ -10,7 +10,7 @@ services:
     volumes:
         - ./:/app/
     
-  mysql:
+  docker-mysql:
     image: mysql:8.0
     ports: 
       - "3306:3306"
@@ -18,10 +18,12 @@ services:
       - backend
     volumes:
       - ./dbdata/:/var/lib/mysql
+      - ./provisioning/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PW?err}
+      MYSQL_DATABASE: ${DB_NAME?err}
 
-  web:
+  docker-web:
     image: nginx:1.15
     ports:
       - "80:80"
@@ -31,10 +33,10 @@ services:
       - ./:/app/
       - ./provisioning/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
-      - php-fpm
-      - mysql
+      - docker-php-fpm
+      - docker-mysql
 
-  phpmyadmin:
+  docker-phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
      - 8080:80
@@ -43,9 +45,9 @@ services:
     volumes:
       - /sessions
     depends_on:
-        - mysql
+        - docker-mysql
     environment:
-      - PMA_HOST=mysql
+      - PMA_HOST=docker-mysql
       - PMA_PORT=3306
 
 networks:
