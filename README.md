@@ -11,15 +11,19 @@
 # Helpful commands
 ## Run Composer
 ```shell
-sudo docker run --rm --interactive --tty --volume $PWD:/app composer composer
+sudo docker-compose run docker-php-fpm composer
 ```
 ## Run CI check
 ```shell
-sudo docker run --rm --interactive --tty --volume $PWD:/app composer composer check
+sudo docker-compose run docker-php-fpm composer check
+```
+
+## Run Doctrine
+```shell
+sudo docker-compose run docker-php-fpm composer doctrine
 ```
 
 # TODO
-* install doctrine
 * default doctrine routes
 * default unit test
 * deploy to docker hub
