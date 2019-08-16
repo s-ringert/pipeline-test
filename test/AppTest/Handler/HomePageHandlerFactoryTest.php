@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AppTest\Handler;
 
-use App\Handler\HomePageHandler;
-use App\Handler\HomePageHandlerFactory;
+use App\Handler\DemoJsonHandler;
+use App\Handler\DemoJsonHandlerFactory;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
 use Psr\Container\ContainerInterface;
@@ -27,14 +27,14 @@ class HomePageHandlerFactoryTest extends TestCase
 
     public function testFactoryWithoutTemplate()
     {
-        $factory = new HomePageHandlerFactory();
+        $factory = new DemoJsonHandlerFactory();
         $this->container->has(TemplateRendererInterface::class)->willReturn(false);
 
-        $this->assertInstanceOf(HomePageHandlerFactory::class, $factory);
+        $this->assertInstanceOf(DemoJsonHandlerFactory::class, $factory);
 
         $homePage = $factory($this->container->reveal());
 
-        $this->assertInstanceOf(HomePageHandler::class, $homePage);
+        $this->assertInstanceOf(DemoJsonHandler::class, $homePage);
     }
 
     public function testFactoryWithTemplate()
@@ -44,10 +44,10 @@ class HomePageHandlerFactoryTest extends TestCase
             ->get(TemplateRendererInterface::class)
             ->willReturn($this->prophesize(TemplateRendererInterface::class));
 
-        $factory = new HomePageHandlerFactory();
+        $factory = new DemoJsonHandlerFactory();
 
         $homePage = $factory($this->container->reveal());
 
-        $this->assertInstanceOf(HomePageHandler::class, $homePage);
+        $this->assertInstanceOf(DemoJsonHandler::class, $homePage);
     }
 }

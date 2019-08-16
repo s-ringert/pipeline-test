@@ -9,7 +9,7 @@ use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 use function get_class;
 
-class HomePageHandlerFactory
+class DemoJsonHandlerFactory
 {
 
     public function __invoke(ContainerInterface $container): RequestHandlerInterface
@@ -19,6 +19,6 @@ class HomePageHandlerFactory
             ? $container->get(TemplateRendererInterface::class)
             : null;
 
-        return new HomePageHandler(get_class($container), $router, $template);
+        return new DemoJsonHandler(get_class($container), $router, $template);
     }
 }

@@ -9,7 +9,7 @@ use Zend\Diactoros\Response\JsonResponse;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class HomePageHandler implements RequestHandlerInterface
+class DemoJsonHandler implements RequestHandlerInterface
 {
 
     /** @var string */
@@ -33,13 +33,11 @@ class HomePageHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        if ($this->template === null) {
-            return new JsonResponse(
-                [
-                    'welcome' => 'Congratulations! You have installed the ringert skeleton application.',
-                    'url'     => 'https://github.com/s-ringert/skeleton'
-                ]
-            );
-        }
+        return new JsonResponse(
+            [
+                'welcome' => 'Congratulations! You have installed the ringert skeleton application.',
+                'url'     => 'https://github.com/s-ringert/skeleton'
+            ]
+        );
     }
 }

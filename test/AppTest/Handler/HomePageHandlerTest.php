@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AppTest\Handler;
 
-use App\Handler\HomePageHandler;
+use App\Handler\DemoJsonHandler;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
@@ -31,7 +31,7 @@ class HomePageHandlerTest extends TestCase
 
     public function testReturnsJsonResponseWhenNoTemplateRendererProvided()
     {
-        $homePage = new HomePageHandler(
+        $homePage = new DemoJsonHandler(
             get_class($this->container->reveal()),
             $this->router->reveal(),
             null

@@ -3,6 +3,11 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Handler\DemoPageHandler;
+use App\Handler\DemoPageHandlerFactory;
+use App\Handler\ListProductsHandler;
+use App\Handler\ListProductsHandlerFactory;
+
 /**
  * The configuration provider for the App module
  *
@@ -35,8 +40,10 @@ class ConfigProvider
             'invokables' => [
             ],
             'factories'  => [
-                Handler\HomePageHandler::class     => Handler\HomePageHandlerFactory::class,
+                Handler\DemoJsonHandler::class     => Handler\DemoJsonHandlerFactory::class,
+                DemoPageHandler::class             => DemoPageHandlerFactory::class,
                 \Doctrine\ORM\EntityManager::class => Entity\Manager\EntityManagerFactory::class,
+                ListProductsHandler::class         => ListProductsHandlerFactory::class,
             ],
         ];
     }
