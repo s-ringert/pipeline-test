@@ -1,4 +1,5 @@
 <?php
+
 Namespace App\Entity;
 
 class Product
