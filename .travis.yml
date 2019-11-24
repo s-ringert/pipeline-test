@@ -1,1 +1,2 @@
-language: php
+language: php:7.2
+before_script: composer install
