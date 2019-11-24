@@ -5,3 +5,9 @@ php:
 install:
   - composer self-update
   - composer install
+
+script:
+  - composer cs-check
+  - composer stan
+  - composer test
+
