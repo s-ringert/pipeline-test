@@ -1,5 +1,5 @@
 # About
-* This is a PHP 7.1 Docker Skeleton with Zend Expressive and Doctrine
+* This is a PHP 7.2 Docker Skeleton with Zend Expressive and Doctrine
 
 # Setup
 * clone repo
@@ -24,8 +24,5 @@ sudo docker-compose run docker-php-fpm composer doctrine
 ```
 
 # TODO
-* default doctrine routes
-* default unit test
-* deploy to docker hub
-* pull from docker hub and load to server
-* automatic build and deploy
+* travis report broken steps
+* travis auto deploy
