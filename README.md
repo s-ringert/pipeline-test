@@ -24,5 +24,6 @@ sudo docker-compose run docker-php-fpm composer doctrine
 ```
 
 # TODO
+* travis split depedencies into single prepare step
 * travis report broken steps
 * travis auto deploy
