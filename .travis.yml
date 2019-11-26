@@ -3,23 +3,23 @@ php:
   - 7.2
 before_script:
   - phpenv config-rm xdebug.ini
-
-#script:
-#  - composer cs-check
-#  - composer stan
-#  - composer test
+  - composer self-update
+  - composer install
 
 notifications:
   email:
     on_success: never
     on_failure: always
 
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
 jobs:
   include:
-    - stage: dependencies
-      script:
-        - composer self-update
-        - composer install
+#    - stage: dependencies
+#      script:
+#        - composer install
     - stage: integration
       script:
         - composer cs-check
