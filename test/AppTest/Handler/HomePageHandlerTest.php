@@ -26,7 +26,7 @@ class HomePageHandlerTest extends TestCase
     protected function setUp()
     {
         $this->container = $this->prophesize(ContainerInterface::class);
-        $this->router    = $this->prophesize(RouterInterface::class);
+        $this->router = $this->prophesize(RouterInterface::class);
     }
 
     public function testReturnsJsonResponseWhenNoTemplateRendererProvided()
@@ -41,6 +41,6 @@ class HomePageHandlerTest extends TestCase
         );
 
         $this->assertInstanceOf(JsonResponse::class, $response);
-        $this->assertEquals(true,false);
+        $this->assertEquals(true, false);
     }
 }
