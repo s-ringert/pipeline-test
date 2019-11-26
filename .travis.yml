@@ -1,15 +1,13 @@
 language: php
 php:
   - 7.2
+before_script:
+  - phpenv config-rm xdebug.ini
 
-install:
-  - composer self-update
-  - composer install
-
-script:
-  - composer cs-check
-  - composer stan
-  - composer test
+#script:
+#  - composer cs-check
+#  - composer stan
+#  - composer test
 
 notifications:
   email:
@@ -18,15 +16,16 @@ notifications:
 
 jobs:
   include:
-    - stage: codestyle
+    - stage: dependencies
+      script:
+        - composer self-update
+        - composer install
+    - stage: integration
       script:
         - composer cs-check
-    - stage: analyse
-      script:
         - composer stan
-    - stage: test
-      script:
         - composer test
+    - stage: deploy
 
 #stages:
  # - composer
