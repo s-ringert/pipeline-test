@@ -41,6 +41,5 @@ class HomePageHandlerTest extends TestCase
         );
 
         $this->assertInstanceOf(JsonResponse::class, $response);
-        $this->assertEquals(true, false);
     }
 }
