@@ -11,9 +11,9 @@ notifications:
     on_success: never
     on_failure: always
 
-cache:
-  directories:
-    - $HOME/.composer/cache/files
+#cache:
+#  directories:
+#    - $HOME/.composer/cache/files
 
 jobs:
   include:
@@ -25,11 +25,7 @@ jobs:
         - composer cs-check
         - composer stan
         - composer test
+    - stage: docker-build
     - stage: deploy
+      # if: branch = master
 
-#stages:
- # - composer
-  #- testing
-  #- build
-  #- name: deploy
-   # if: branch = master
