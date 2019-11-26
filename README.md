@@ -1,5 +1,9 @@
 # About
-* This is a PHP 7.2 Docker Skeleton with Zend Expressive and Doctrine
+* This is a PHP 7.2 Skeleton 
+* Zend Expressive 
+* Doctrine
+* CI/CD with travis
+* [![Build Status](https://travis-ci.org/s-ringert/skeleton.svg?branch=master)](https://travis-ci.org/s-ringert/skeleton)
 
 # Setup
 * clone repo
