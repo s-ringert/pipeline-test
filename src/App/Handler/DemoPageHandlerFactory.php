@@ -17,8 +17,8 @@ class DemoPageHandlerFactory implements FactoryInterface
      * Create an object
      *
      * @param ContainerInterface $container
-     * @param string             $requestedName
-     * @param null|array         $options
+     * @param string $requestedName
+     * @param null|array $options
      *
      * @return object
      * @throws ServiceNotFoundException if unable to resolve the service.

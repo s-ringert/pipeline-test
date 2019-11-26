@@ -36,7 +36,7 @@ class DemoJsonHandler implements RequestHandlerInterface
         return new JsonResponse(
             [
                 'welcome' => 'Congratulations! You have installed the ringert skeleton application.',
-                'url'     => 'https://github.com/s-ringert/skeleton'
+                'url' => 'https://github.com/s-ringert/skeleton'
             ]
         );
     }

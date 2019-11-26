@@ -27,7 +27,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'templates'    => $this->getTemplates(),
+            'templates' => $this->getTemplates(),
         ];
     }
 
@@ -39,11 +39,11 @@ class ConfigProvider
         return [
             'invokables' => [
             ],
-            'factories'  => [
-                Handler\DemoJsonHandler::class     => Handler\DemoJsonHandlerFactory::class,
-                DemoPageHandler::class             => DemoPageHandlerFactory::class,
+            'factories' => [
+                Handler\DemoJsonHandler::class => Handler\DemoJsonHandlerFactory::class,
+                DemoPageHandler::class => DemoPageHandlerFactory::class,
                 \Doctrine\ORM\EntityManager::class => Entity\Manager\EntityManagerFactory::class,
-                ListProductsHandler::class         => ListProductsHandlerFactory::class,
+                ListProductsHandler::class => ListProductsHandlerFactory::class,
             ],
         ];
     }
@@ -55,8 +55,8 @@ class ConfigProvider
     {
         return [
             'paths' => [
-                'app'    => ['templates/app'],
-                'error'  => ['templates/error'],
+                'app' => ['templates/app'],
+                'error' => ['templates/error'],
                 'layout' => ['templates/layout'],
             ],
         ];

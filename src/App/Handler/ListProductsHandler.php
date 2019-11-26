@@ -23,7 +23,7 @@ class ListProductsHandler implements RequestHandlerInterface
      * ListProductsHandler constructor.
      *
      * @param TemplateRendererInterface $templateRenderer
-     * @param EntityManager             $entityManager
+     * @param EntityManager $entityManager
      */
     public function __construct(TemplateRendererInterface $templateRenderer, EntityManager $entityManager)
     {
