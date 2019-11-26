@@ -1,6 +1,6 @@
 {
     "name": "s-ringert/skeleton",
-    "description": "Basic Skeleton with Zend Expresse, Doctrine and CI Pipeline",
+    "description": "Basic Skeleton with Zend Expressive, Doctrine and CI Pipeline",
     "type": "project",
     "config": {
         "sort-packages": true
@@ -18,7 +18,7 @@
     },
 
     "require": {
-        "php": "^7.1",
+        "php": "^7.2",
         "doctrine/orm": "^2.6",
         "zendframework/zend-component-installer": "^2.1.1",
         "zendframework/zend-config-aggregator": "^1.0",
