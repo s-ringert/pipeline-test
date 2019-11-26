@@ -42,6 +42,5 @@ class ListProductsHandler implements RequestHandlerInterface
         $data['productList'] = $productRepository->findAll();
 
         return new HtmlResponse($this->templateRenderer->render('app::list-products', $data));
-
     }
 }

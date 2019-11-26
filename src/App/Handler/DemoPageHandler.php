@@ -44,7 +44,6 @@ class DemoPageHandler implements RequestHandlerInterface
         $data = [];
 
         switch ($this->containerName) {
-
             case 'Zend\ServiceManager\ServiceManager':
                 $data['containerName'] = 'Zend Servicemanager';
                 $data['containerDocs'] = 'https://docs.zendframework.com/zend-servicemanager/';
