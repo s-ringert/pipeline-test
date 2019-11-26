@@ -18,14 +18,13 @@ class ListProductsHandlerFactory implements FactoryInterface
      * Create an object
      *
      * @param ContainerInterface $container
-     * @param string             $requestedName
-     * @param null|array         $options
+     * @param string $requestedName
+     * @param null|array $options
      *
      * @return object
      * @throws ServiceNotFoundException if unable to resolve the service.
      * @throws ServiceNotCreatedException if an exception is raised when
      *     creating a service.
-     * @throws ContainerException if any other error occurs
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
@@ -33,4 +32,5 @@ class ListProductsHandlerFactory implements FactoryInterface
             $container->get(TemplateRendererInterface::class),
             $container->get(EntityManager::class)
         );
-}}
+    }
+}
