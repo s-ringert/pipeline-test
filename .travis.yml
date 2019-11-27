@@ -1,9 +1,11 @@
 language: php
 php:
   - 7.2
-before_script:
+
+before_install:
   - phpenv config-rm xdebug.ini
   - composer self-update
+install:
   - composer install
 
 notifications:
