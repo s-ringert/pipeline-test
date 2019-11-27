@@ -33,6 +33,11 @@ sudo docker-compose run docker-php-fpm composer check
 sudo docker-compose run docker-php-fpm composer doctrine
 ```
 
+## Run PHP CLI in PHP-FPM
+```shell
+ sudo docker-compose run docker-php-fpm php public/createProduct.php product7
+```
+
 # TODO
 * travis auto deploy
 * update twig template
