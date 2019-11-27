@@ -3,7 +3,7 @@
 * Zend Expressive 
 * Doctrine
 * Twig
-* CI/CD with travis
+* CI with travis
 * Docker
 * [![Build Status](https://travis-ci.org/s-ringert/skeleton.svg?branch=master)](https://travis-ci.org/s-ringert/skeleton)
 
@@ -39,5 +39,4 @@ sudo docker-compose run docker-php-fpm composer doctrine
 ```
 
 # TODO
-* travis auto deploy
 * update twig template
