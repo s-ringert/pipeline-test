@@ -7,6 +7,7 @@ use App\Handler\DemoPageHandler;
 use App\Handler\DemoPageHandlerFactory;
 use App\Handler\ListProductsHandler;
 use App\Handler\ListProductsHandlerFactory;
+use Doctrine\ORM\EntityManager;
 
 /**
  * The configuration provider for the App module
@@ -42,8 +43,9 @@ class ConfigProvider
             'factories' => [
                 Handler\DemoJsonHandler::class => Handler\DemoJsonHandlerFactory::class,
                 DemoPageHandler::class => DemoPageHandlerFactory::class,
-                \Doctrine\ORM\EntityManager::class => Entity\Manager\EntityManagerFactory::class,
+                EntityManager::class => Entity\Manager\EntityManagerFactory::class,
                 ListProductsHandler::class => ListProductsHandlerFactory::class,
+
             ],
         ];
     }
