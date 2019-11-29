@@ -37,6 +37,3 @@ sudo docker-compose run docker-php-fpm composer doctrine
 ```shell
  sudo docker-compose run docker-php-fpm php public/createProduct.php product7
 ```
-
-# TODO
-* update twig template
