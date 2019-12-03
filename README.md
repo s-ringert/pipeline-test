@@ -37,3 +37,8 @@ sudo docker-compose run docker-php-fpm composer doctrine
 ```shell
  sudo docker-compose run docker-php-fpm php public/createProduct.php product7
 ```
+
+
+## TODO
+* HTTP + HTTPS - https://certbot.eff.org/
+* HAProxy
