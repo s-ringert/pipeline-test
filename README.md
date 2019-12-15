@@ -67,4 +67,4 @@ sudo docker-compose run docker-php-fpm composer clear-all-cache
 
 
 ## TODO
-* HAProxy for reverse proxy
+* HAProxy as reverse proxy
