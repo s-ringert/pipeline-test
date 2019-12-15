@@ -67,5 +67,4 @@ sudo docker-compose run docker-php-fpm composer clear-all-cache
 
 
 ## TODO
-* HTTP + HTTPS - https://certbot.eff.org/
-* HAProxy
+* HAProxy for reverse proxy
