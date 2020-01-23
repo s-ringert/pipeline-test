@@ -18,7 +18,7 @@
     },
 
     "require": {
-        "php": "^7.2",
+        "php": "^7.3",
         "doctrine/orm": "2.7.0",
         "symfony/var-dumper": "^5.0",
         "zendframework/zend-component-installer": "^2.1.1",
