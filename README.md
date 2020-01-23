@@ -1,5 +1,5 @@
 # About
-* This is a PHP 7.2 Skeleton 
+* This is a PHP 7.3 Skeleton 
 * Zend Expressive 
 * Doctrine
 * Twig
@@ -43,28 +43,24 @@ sudo docker-compose up -d
 ```
 ## Run Composer
 ```shell
-sudo docker-compose run docker-php-fpm composer
+sudo docker-compose exec docker-php-fpm composer
 ```
 ## Run CI check
 ```shell
-sudo docker-compose run docker-php-fpm composer check
+sudo docker-compose exec docker-php-fpm composer check
 ```
 
 ## Run Doctrine
 ```shell
-sudo docker-compose run docker-php-fpm php vendor/bin/doctrine
+sudo docker-compose exec docker-php-fpm php vendor/bin/doctrine
 ```
 
 ## Run PHP CLI
 ```shell
- sudo docker-compose run docker-php-fpm php
+ sudo docker-compose exec docker-php-fpm php
 ```
 
 ## Clear Caches
 ```shell
-sudo docker-compose run docker-php-fpm composer clear-all-cache
+sudo docker-compose exec docker-php-fpm composer clear-all-cache
 ```
-
-
-## TODO
-* HAProxy as reverse proxy
