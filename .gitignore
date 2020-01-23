@@ -7,3 +7,4 @@ vendor/
 nbproject
 !dbdata/.gitkeep
 .env
+.phpunit.result.cache
