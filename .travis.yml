@@ -6,7 +6,7 @@ before_install:
   - phpenv config-rm xdebug.ini
   - composer self-update
 install:
-  - composer install --dev
+  - composer install
 
 notifications:
   email:

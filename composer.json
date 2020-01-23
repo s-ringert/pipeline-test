@@ -38,7 +38,7 @@
         }
     },
     "scripts": {
-        "check": [
+        "analyze": [
             "@cs-check",
             "@stan",
             "@test"
