@@ -1,6 +1,6 @@
 # About
 * This is a PHP 7.4 Skeleton 
-* Zend Expressive / Laminas / Mezzio
+* Laminas Mezzio
 * Doctrine
 * Twig
 * CI with travis
