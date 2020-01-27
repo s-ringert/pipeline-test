@@ -2,7 +2,7 @@
 
 namespace App\Entity\Manager;
 
-class EntityManagerFactory implements \Zend\ServiceManager\Factory\FactoryInterface
+class EntityManagerFactory implements \Laminas\ServiceManager\Factory\FactoryInterface
 {
     public function __invoke(
         \Interop\Container\ContainerInterface $container,
