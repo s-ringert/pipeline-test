@@ -5,9 +5,9 @@ namespace App\Handler;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\JsonResponse;
-use Zend\Expressive\Router;
-use Zend\Expressive\Template\TemplateRendererInterface;
+use Laminas\Diactoros\Response\JsonResponse;
+use Mezzio\Router;
+use Mezzio\Template\TemplateRendererInterface;
 
 class DemoJsonHandler implements RequestHandlerInterface
 {

@@ -5,11 +5,11 @@ namespace App\Handler;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\Response\JsonResponse;
-use Zend\Expressive\Router\RouterInterface;
-use Zend\Expressive\Template\TemplateRendererInterface;
-use Zend\Expressive\Twig\TwigRenderer;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\Diactoros\Response\JsonResponse;
+use Mezzio\Router\RouterInterface;
+use Mezzio\Template\TemplateRendererInterface;
+use Mezzio\Twig\TwigRenderer;
 
 class DemoPageHandler implements RequestHandlerInterface
 {
